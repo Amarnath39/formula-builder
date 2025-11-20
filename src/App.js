@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Formula Builder (CSS Version)</h1>
+      <h1>Formula Builder</h1>
 
       {/* Variables Section */}
       <div className="section">
