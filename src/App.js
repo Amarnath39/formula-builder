@@ -117,10 +117,10 @@ export default function App() {
           <tbody>
             {variables.map((v, i) => (
               <tr key={i}>
-                <td>{v.name}</td>
-                <td>{v.type}</td>
-                <td>{v.value}</td>
-                <td>
+                <td data-label="Name">{v.name}</td>
+                <td data-label="Type">{v.type}</td>
+                <td data-label="Value">{v.value}</td>
+                <td data-label="Action">
                   <button className="btn danger" onClick={() => deleteVariable(v.name)}>Delete</button>
                 </td>
               </tr>

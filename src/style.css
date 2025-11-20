@@ -11,18 +11,30 @@ body {
   font-family: Arial, sans-serif;
   background: #f7f7f7;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 20px;
+  }
 }
 
 .section {
@@ -31,20 +43,34 @@ body {
 
 .input-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 15px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .input-row {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 input, select {
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 4px;
-  flex: 1 1 200px;
-  min-width: 0;
   width: 100%;
+  box-sizing: border-box;
   margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  input, select {
+    flex: 1 1 200px;
+    min-width: 0;
+    margin-bottom: 0;
+  }
 }
 
 .btn {
@@ -127,9 +153,12 @@ input, select {
 }
 
 /* Ensure proper display of tables on mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .table {
     display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .table thead {
@@ -165,6 +194,11 @@ input, select {
     content: attr(data-label);
     font-weight: bold;
     margin-right: 1rem;
-    flex: 0 0 40%;
+    flex: 0 0 30%;
+    min-width: 80px;
+  }
+  
+  .table td {
+    font-size: 0.85rem;
   }
 }
